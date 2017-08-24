@@ -1,0 +1,8 @@
+UITableView Cell with Progress bar
+
+This project is created using XCode 9 and iOS 11.
+
+A table view providing a file download progress update in cell.
+
+
+
