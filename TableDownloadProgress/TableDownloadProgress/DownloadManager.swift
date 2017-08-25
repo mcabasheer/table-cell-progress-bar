@@ -18,6 +18,7 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
     
     static var shared = DownloadManager()
     var identifier : Int = -1
+    var folderPath : String = ""
     typealias ProgressHandler = (Int, Float) -> ()
     
     var onProgress : ProgressHandler? {
@@ -28,7 +29,7 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
         }
     }
     
-    override private init() {
+    override init() {
         super.init()
     }
     
@@ -62,7 +63,9 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let documentDirectoryPath:String = path[0]
         let fileManager = FileManager()
-        var destinationURLForFile = URL(fileURLWithPath: documentDirectoryPath.appending("/\(location.relativeString)"))
+        var destinationURLForFile = URL(fileURLWithPath: documentDirectoryPath.appending("/\(folderPath)"))
+        
+        
         do {
             try fileManager.createDirectory(at: destinationURLForFile, withIntermediateDirectories: true, attributes: nil)
             destinationURLForFile.appendPathComponent(String(describing: fileName!))

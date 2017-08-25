@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TableDownloadProgress/DownloadManager.swift"
-            timestampString = "525239088.891757"
+            timestampString = "525339320.237179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "urlSession(_:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,61 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TableDownloadProgress/MasterViewController.swift"
-            timestampString = "525239088.891831"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Int, Swift.Float) -&gt; () in TableDownloadProgress.MasterViewController.tableView(__ObjC.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TableDownloadProgress"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lalit/Basheer/General/Git/git/TableDownloadProgress/TableDownloadProgress/MasterViewController.swift"
-                  timestampString = "525238576.19274"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "1212">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Int, Swift.Float) -&gt; () in TableDownloadProgress.MasterViewController.tableView(__ObjC.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TableDownloadProgress"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lalit/Basheer/General/Git/git/TableDownloadProgress/TableDownloadProgress/MasterViewController.swift"
-                  timestampString = "525238576.20089"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "1805">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TableDownloadProgress/DownloadManager.swift"
-            timestampString = "525239088.892122"
+            timestampString = "525339590.254509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "calculateProgress(session:completionHandler:)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "urlSession(_:downloadTask:didFinishDownloadingTo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -123,11 +123,13 @@ class MasterViewController: UITableViewController {
         }
         else {
             let url = URL(string: item.link)!
-            DownloadManager.shared.identifier = indexPath.row
-            let downloadTaskLocal =  DownloadManager.shared.activate().downloadTask(with: url)
+            let downloadManager = DownloadManager()
+            downloadManager.identifier = indexPath.row
+            downloadManager.folderPath = "video"
+            let downloadTaskLocal =  downloadManager.activate().downloadTask(with: url)
             downloadTaskLocal.resume()
             
-            DownloadManager.shared.onProgress = { (row, progress) in
+            downloadManager.onProgress = { (row, progress) in
                 //print("Downloading for \(row) with progress \(progress)")
                 
                 DispatchQueue.main.async {
