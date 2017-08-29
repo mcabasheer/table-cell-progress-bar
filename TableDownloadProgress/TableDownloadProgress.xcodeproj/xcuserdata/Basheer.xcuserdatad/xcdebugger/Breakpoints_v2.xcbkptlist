@@ -10,12 +10,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TableDownloadProgress/DownloadManager.swift"
-            timestampString = "525686017.171117"
+            timestampString = "525693568.445838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "urlSession(_:downloadTask:didFinishDownloadingTo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TableDownloadProgress/DownloadManager.swift"
+            timestampString = "525693568.446462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "calculateProgress(session:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;__ObjC.URLSessionDataTask&gt;, Swift.Array&lt;__ObjC.URLSessionUploadTask&gt;, Swift.Array&lt;__ObjC.URLSessionDownloadTask&gt;) -&gt; () in TableDownloadProgress.DownloadManager.(calculateProgress in _296217B2D1F5FE3CE3181B1112FA2D06)(session: __ObjC.URLSession, completionHandler: (Swift.Int, Swift.Float) -&gt; ()) -&gt; ()"
+                  moduleName = "TableDownloadProgress"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lalit/Basheer/General/Git/git/demo/table-cell-progress-bar/TableDownloadProgress/TableDownloadProgress/DownloadManager.swift"
+                  timestampString = "525693437.796859"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "282">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.String in closure #1 (Swift.Array&lt;__ObjC.URLSessionDataTask&gt;, Swift.Array&lt;__ObjC.URLSessionUploadTask&gt;, Swift.Array&lt;__ObjC.URLSessionDownloadTask&gt;) -&gt; () in TableDownloadProgress.DownloadManager.(calculateProgress in _296217B2D1F5FE3CE3181B1112FA2D06)(session: __ObjC.URLSession, completionHandler: (Swift.Int, Swift.Float) -&gt; ()) -&gt; ()"
+                  moduleName = "TableDownloadProgress"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lalit/Basheer/General/Git/git/demo/table-cell-progress-bar/TableDownloadProgress/TableDownloadProgress/DownloadManager.swift"
+                  timestampString = "525693437.801943"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TableDownloadProgress/DownloadManager.swift"
+            timestampString = "525693568.446882"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "activate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

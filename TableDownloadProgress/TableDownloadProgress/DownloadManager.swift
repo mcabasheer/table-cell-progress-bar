@@ -11,7 +11,13 @@ import UIKit
 
 extension URLSession {
     func getSessionDescription () -> Int {
+        // row id
         return Int(self.sessionDescription!)!
+    }
+    
+    func getDebugDescription () -> Int {
+        // table id
+        return Int(self.debugDescription)!
     }
 }
 
@@ -21,16 +27,15 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
     
     static var shared = DownloadManager()
     var identifier : Int = -1
+    var tableId : Int = -1
     var folderPath : String = ""
-    typealias ProgressHandler = (Int, Float) -> ()
+    typealias ProgressHandler = (Int, Int, Float) -> ()
     
-    var parentVC : MasterViewController! = nil
     
     var onProgress : ProgressHandler? {
         didSet {
             if onProgress != nil {
                 let _ = activate()
-                self.parentVC.onProgress = onProgress
             }
         }
     }
@@ -44,10 +49,11 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
         
         let urlSession = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue())
         urlSession.sessionDescription = String(identifier)
+        urlSession.accessibilityHint = String(tableId)
         return urlSession
     }
     
-    private func calculateProgress(session : URLSession, completionHandler : @escaping (Int, Float) -> ()) {
+    private func calculateProgress(session : URLSession, completionHandler : @escaping (Int, Int, Float) -> ()) {
         session.getTasksWithCompletionHandler { (tasks, uploads, downloads) in
             let progress = downloads.map({ (task) -> Float in
                 if task.countOfBytesExpectedToReceive > 0 {
@@ -57,7 +63,8 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
                 }
             })
 
-            completionHandler(session.getSessionDescription(), progress.reduce(0.0, +))
+            print("tbale id \(session.accessibilityHint ?? "hit")")
+            completionHandler(session.getSessionDescription(), Int(session.accessibilityHint!)!, progress.reduce(0.0, +))
         }
     }
     

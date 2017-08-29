@@ -29,7 +29,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     var items = [item]()
-
+    var tableId = 100
     var onProgress : ProgressHandler?
     
     override func viewDidLoad() {
@@ -50,12 +50,13 @@ class MasterViewController: UITableViewController {
         items.append(item(title: "Video 4"))
         
         self.tableView.rowHeight = 100.0
-        
-        DownloadManager.shared.parentVC = self
+
 //        self.onProgress = DownloadManager.shared.onProgress
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.masterVC = self
+        
+        self.tableView.tag = 1000
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -135,11 +136,12 @@ class MasterViewController: UITableViewController {
             let url = URL(string: item.link)!
             let downloadManager = DownloadManager.shared
             downloadManager.identifier = indexPath.row
+            downloadManager.tableId = 1200
             downloadManager.folderPath = "video"
             let downloadTaskLocal =  downloadManager.activate().downloadTask(with: url)
             downloadTaskLocal.resume()
               
-            downloadManager.onProgress = { (row, progress) in
+            downloadManager.onProgress = { (row, tableId, progress) in
                 //print("Downloading for \(row) with progress \(progress)")
                 
                 DispatchQueue.main.async {
@@ -148,6 +150,13 @@ class MasterViewController: UITableViewController {
                         print("master vc is nil")
                         return
                     }
+                    
+                    if appDelegate.masterVC.tableId != tableId {
+                        // different table
+                        return
+                    }
+
+                    
                     let indexpath = IndexPath.init(row: row, section: 0)
                     let cell = appDelegate.masterVC.tableView.cellForRow(at: indexpath)
                     print("downloading for cell \(String(describing: cell?.tag))")
