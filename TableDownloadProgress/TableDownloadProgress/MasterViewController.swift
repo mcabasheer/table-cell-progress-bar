@@ -25,15 +25,17 @@ struct item {
 }
 
 class MasterViewController: UITableViewController {
-
+    typealias ProgressHandler = (Int, Float) -> ()
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     var items = [item]()
 
+    var onProgress : ProgressHandler?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.leftBarButtonItem = editButtonItem
+        //navigationItem.leftBarButtonItem = editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
@@ -48,6 +50,12 @@ class MasterViewController: UITableViewController {
         items.append(item(title: "Video 4"))
         
         self.tableView.rowHeight = 100.0
+        
+        DownloadManager.shared.parentVC = self
+//        self.onProgress = DownloadManager.shared.onProgress
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.masterVC = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +118,8 @@ class MasterViewController: UITableViewController {
         }
         
         
+        
+        
         return cell
     }
 
@@ -123,18 +133,23 @@ class MasterViewController: UITableViewController {
         }
         else {
             let url = URL(string: item.link)!
-            let downloadManager = DownloadManager()
+            let downloadManager = DownloadManager.shared
             downloadManager.identifier = indexPath.row
             downloadManager.folderPath = "video"
             let downloadTaskLocal =  downloadManager.activate().downloadTask(with: url)
             downloadTaskLocal.resume()
-            
+              
             downloadManager.onProgress = { (row, progress) in
                 //print("Downloading for \(row) with progress \(progress)")
                 
                 DispatchQueue.main.async {
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    if appDelegate.masterVC == nil {
+                        print("master vc is nil")
+                        return
+                    }
                     let indexpath = IndexPath.init(row: row, section: 0)
-                    let cell = self.tableView.cellForRow(at: indexpath)
+                    let cell = appDelegate.masterVC.tableView.cellForRow(at: indexpath)
                     print("downloading for cell \(String(describing: cell?.tag))")
                     if progress <= 1.0 {
                         

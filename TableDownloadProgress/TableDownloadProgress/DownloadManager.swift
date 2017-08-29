@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension URLSession {
     func getSessionDescription () -> Int {
@@ -16,15 +17,20 @@ extension URLSession {
 
 class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
     
+    
+    
     static var shared = DownloadManager()
     var identifier : Int = -1
     var folderPath : String = ""
     typealias ProgressHandler = (Int, Float) -> ()
     
+    var parentVC : MasterViewController! = nil
+    
     var onProgress : ProgressHandler? {
         didSet {
             if onProgress != nil {
                 let _ = activate()
+                self.parentVC.onProgress = onProgress
             }
         }
     }
@@ -73,6 +79,8 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
         }catch(let error){
             print(error)
         }
+        
+        
         
     }
     

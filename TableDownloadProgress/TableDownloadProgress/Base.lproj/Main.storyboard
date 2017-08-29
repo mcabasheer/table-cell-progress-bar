@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
+                        <segue destination="xtd-Wp-9DN" kind="relationship" relationship="rootViewController" id="aqX-mC-lcx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
@@ -74,6 +74,35 @@
             </objects>
             <point key="canvasLocation" x="-856" y="-330"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="paZ-rH-GM8">
+            <objects>
+                <viewController id="xtd-Wp-9DN" customClass="DetailViewController" customModule="TableDownloadProgress" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zaf-dh-79L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKl-Cv-71r">
+                                <rect key="frame" x="156" y="318.5" width="62" height="30"/>
+                                <state key="normal" title="Show list"/>
+                                <connections>
+                                    <segue destination="7bK-jq-Zjz" kind="show" id="Jmg-uZ-6nB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qKl-Cv-71r" firstAttribute="centerY" secondItem="zaf-dh-79L" secondAttribute="centerY" id="kj4-e1-6gI"/>
+                            <constraint firstItem="qKl-Cv-71r" firstAttribute="centerX" secondItem="zaf-dh-79L" secondAttribute="centerX" id="qUZ-0e-1Wk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d60-iw-YUy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oxv-Ca-bkM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJl-Qa-qxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="-630"/>
+        </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
@@ -113,7 +142,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="1559" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

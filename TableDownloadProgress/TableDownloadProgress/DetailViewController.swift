@@ -11,8 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
@@ -20,12 +19,17 @@ class DetailViewController: UIViewController {
                 label.text = detail.description
             }
         }
+        
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
+        
+        let button = UIButton.init()
+        
     }
 
     override func didReceiveMemoryWarning() {
